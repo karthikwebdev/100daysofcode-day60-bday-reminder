@@ -1,0 +1,8 @@
+.nav-item{
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.nav-item:hover{
+    transform: translateY(-10px);
+    text-shadow: 10px 10px 10px black ;
+}
