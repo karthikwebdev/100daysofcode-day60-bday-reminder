@@ -4,6 +4,7 @@ function openHome(){
    <p class="text-lg-center text-monospace lead">-Did you ever regret of forgetting birthday of special ones , I felt it . hence made this app which remembers all your friend's birthdays and reminds you on that day</p>    
 </div>`;
 }
+openHome()
 function addBirthday(){
     let name = document.querySelector('#name').value;
     let date = document.querySelector('#date').value;
@@ -30,7 +31,27 @@ function addBirthday(){
     document.querySelector('#phone').value = '';
 }
 function showToday(){
-
+    let items = JSON.parse(localStorage.getItem('birthdays'))
+    document.querySelector('main').innerHTML = `<div class="container mt-3">
+    <div class="row"></div></div>`
+    items.forEach(item=>{
+        let month = parseInt(item.date.substring(5,7));
+        let date = parseInt(item.date.substring(8,10))
+        var d = new Date();
+        if(d.getDate() === date && d.getMonth() === month-1){
+            document.querySelector('.row').innerHTML += `
+            <div class="col col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card border-success mt-3">
+                  <div class="card-body">
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text text-danger">today is his birthday</p>
+                  </div>
+                </div>
+              </div>
+            `
+        }
+    })
+    
 }
 function showAllBirthdays(){
     document.querySelector('main').innerHTML = `<div class="container mt-3">
@@ -46,7 +67,6 @@ function showAllBirthdays(){
                   <div class="card-body">
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">birthday on ${month}-${date}'</p>
-                    <a href="#" class="btn btn-success">wish them</a>
                   </div>
                 </div>
               </div>
