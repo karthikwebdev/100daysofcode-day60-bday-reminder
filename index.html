@@ -8,11 +8,11 @@
     <!-- bootstrap css link-->
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <!--custom css link-->
-   <link rel="stylesheet" href="./CSS/style.css"> 
+   <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
     <!-- nav bar -->
-    <header>            
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-success">
             <span class="navbar-brand text-capitalize text-white mr-lg-5">remindMe</span>
             <button class="navbar-toggler bg-white rounded-pill" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,25 +20,54 @@
             </button>
             <div class="collapse navbar-collapse ml-lg-5" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <span class="nav-item nav-link text-light">Home </span>
-                <span class="nav-item nav-link text-white" onclick="openAddBirthday()">Add Birthday</span>
-                <span class="nav-item nav-link text-white">Today</span>
-                <span class="nav-item nav-link text-white">Birthdays</span>
+                <span class="nav-item nav-link text-light" onclick="openHome()">Home </span>
+                <span class="nav-item nav-link text-white" data-toggle="modal" data-target="#AddBirthdayModal">Add Birthday</span>
+                <span class="nav-item nav-link text-white" onclick="showToday()">Today</span>
+                <span class="nav-item nav-link text-white" onclick="showAllBirthdays()">Birthdays</span>
             </div>
             </div>
         </nav>
     </header>
     <!-- main body -->
     <main>
-        <div class="container">
-                    <!-- <h1 class="display-2 text-lg-center">A Birthday Reminder App</h1>
-                    <p class="text-lg-center text-monospace lead">-Did you ever regret of forgetting birthday of special ones , I felt it . hence made this app which remembers all your friend's birthdays and reminds you on that day</p> -->
-                    
-        </div>
     </main>
+    <section>
+            <!-- Modal -->
+        <div class="modal fade" id="AddBirthdayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Birthday</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-1"></div>
+                        <form class="col col-10">
+                            <div class="form-group">
+                              <label for="name">Enter name</label>
+                              <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                              <small id="nameHelp" class="form-text text-muted">the same name used in message sent to him/her</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="date">Enter date</label>
+                              <input type="date" class="form-control" id="date">
+                            </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" onclick="addBirthday()">Insert Birthday</button>
+                </div>
+            </form>
+        </div>
+    </div>
+            </div>
+            </div>
+        </div>
+    </section>
     <!-- footer -->
     <footer>
-
     </footer>
 </body>
 <!--custom js file-->
