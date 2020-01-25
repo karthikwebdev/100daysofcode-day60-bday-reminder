@@ -1,6 +1,6 @@
 function openHome(){
     document.querySelector('main').innerHTML = `<div class="container">
-    <h1 class="display-2 text-lg-center">A Birthday Reminder App</h1>
+    <h1 class=" display-3 text-lg-center">A Birthday Reminder App</h1>
    <p class="text-lg-center text-monospace lead">-Did you ever regret of forgetting birthday of special ones , I felt it . hence made this app which remembers all your friend's birthdays and reminds you on that day</p>    
 </div>`;
 }
